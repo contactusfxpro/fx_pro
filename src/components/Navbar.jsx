@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="sticky top-0 z-50 bg-[#fafafa] dark:bg-[#070d17] dark:border-b dark:border-gray-700 ">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className=" px-6">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-3">
               <img

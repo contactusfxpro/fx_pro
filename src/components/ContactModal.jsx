@@ -75,11 +75,14 @@ const ContactModal = ({ open, onClose }) => {
     try {
       setLoading(true);
 
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/contact`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to submit");
 
@@ -104,10 +107,10 @@ const ContactModal = ({ open, onClose }) => {
 
   return (
     <div className=" fixed inset-0 z-9999 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-      <div className="w-[80%] h-[88vh] rounded-xl bg-[#f9f9f9] dark:bg-zinc-900 shadow-lg  flex ">
+      <div className="w-[80%] h-[88vh] relative rounded-xl bg-[#f9f9f9] dark:bg-zinc-900 shadow-lg  flex ">
         <button
           onClick={handleClose}
-          className="absolute right-30 top-6 bg-gray-200 p-1 shadow-2xl rounded-full cursor-pointer"
+          className="absolute -right-4.5 -top-4 bg-gray-200 p-1 shadow-2xl rounded-full cursor-pointer"
         >
           <X />
         </button>
