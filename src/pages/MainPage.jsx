@@ -19,12 +19,65 @@ const Home = () => {
     "USD",
     "EUR",
     "GBP",
+    "CHF",
+    "SEK",
+    "NOK",
+    "DKK",
+    "PLN",
+    "CZK",
+    "HUF",
+    "RON",
+    "ISK",
+
+    "CAD",
+    "MXN",
+    "BRL",
+    "ARS",
+    "CLP",
+    "COP",
+    "PEN",
+    "UYU",
     "JPY",
+    "CNY",
+    "CNH",
     "INR",
+    "KRW",
+    "SGD",
+    "HKD",
+    "THB",
+    "IDR",
+    "MYR",
+    "PHP",
+    "VND",
     "AUD",
+    "NZD",
+    "AED",
+    "SAR",
+    "QAR",
+    "KWD",
+    "BHD",
+    "OMR",
+    "EGP",
+    "ZAR",
+    "NGN",
+    "KES",
+    "GHS",
+    "TZS",
+    "UGX",
+    "MAD",
+    "DZD",
+    "TND",
+    "USD",
+    "EUR",
+    "GBP",
+    "JPY",
     "CAD",
     "CHF",
+    "BRL",
+    "RUB",
+    "INR",
     "CNY",
+    "ZAR",
   ];
 
   const prevRatesRef = useRef({});
@@ -43,7 +96,9 @@ const Home = () => {
       if (firstLoadRef.current) {
         setLoading(true);
       }
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/fx/live?base=${base}`);
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/fx/live?base=${base}`
+      );
 
       if (!res.ok) {
         throw new Error("API error");
@@ -154,7 +209,7 @@ const Home = () => {
           prevRates={prevRatesRef.current}
         />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
