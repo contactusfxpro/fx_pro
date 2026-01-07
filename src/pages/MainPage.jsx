@@ -144,7 +144,7 @@ const Home = () => {
           </div>
           <div className="flex items-center gap-6">
             <div className="base flex items-center gap-2 ">
-              <p className="text-slate-600 font-semibold dark:text-[#f4f4f4]">Base Currency : </p>
+              <p className="text-slate-600 font-semibold dark:text-[#f4f4f4]"> Base Currency : </p>
               <SearchableDropdown
                 options={BASE_OPTIONS}
                 value={base}

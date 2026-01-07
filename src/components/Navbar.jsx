@@ -1,7 +1,13 @@
 import { useState } from "react";
 import fxLogo from "../assets/logo.png";
 import ToggleTheme from "./ToggleTheme";
-import { CircleDollarSign, History, Sparkles } from "lucide-react";
+import {
+  CircleDollarSign,
+  History,
+  RefreshCcw,
+  RotateCcw,
+  Sparkles,
+} from "lucide-react";
 import ContactModal from "./ContactModal";
 import { Link, NavLink } from "react-router-dom";
 import { Home, Coins, BarChart3 } from "lucide-react";
@@ -89,6 +95,26 @@ const Navbar = () => {
                   >
                     <History className="w-4 h-4" />
                     <span>Historical Data</span>
+                  </div>
+
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 w-full rounded-full transition-all
+        ${isActive ? "bg-blue-600 dark:bg-blue-400" : "bg-transparent"}`}
+                  />
+                </>
+              )}
+            </NavLink>
+
+            <NavLink to="/currencyconverter" className={navItem}>
+              {({ isActive }) => (
+                <>
+                  <div
+                    className={`flex items-center gap-1 text-[16px] transition-all
+      ${isActive ? "font-semibold " : "font-medium"}
+    `}
+                  >
+                    <RefreshCcw className="w-4 h-4" />
+                    <span>Currency Converter</span>
                   </div>
 
                   <span

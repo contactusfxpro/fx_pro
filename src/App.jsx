@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar.jsx";
 import History from "./pages/HistoryPage.jsx";
 import Footer from "./components/Footer.jsx";
 import Currencies from "./pages/Currencies.jsx";
+import CurrencyConverter from "./pages/CurrencyConverter.jsx";
 
 const AppContent = () => {
   const { theme } = useTheme();
@@ -38,11 +39,11 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/history" element={<History />} />
-          <Route path="/currencies" element={<Currencies/>}/>
+          <Route path="/currencies" element={<Currencies />} />
+          <Route path="/currencyconverter" element={<CurrencyConverter />} />
         </Routes>
 
-      <Footer />
-
+        <Footer />
       </div>
     </>
   );
