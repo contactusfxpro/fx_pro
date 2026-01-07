@@ -2,7 +2,7 @@ import { getCurrencyFlag } from "../utils/currencyToCountry";
 
 const CurrencyTable = ({ rates, currencies, prevRates }) => {
   return (
-    <div className="overflow-auto max-h-[78vh] rounded-xl bg-white dark:bg-black ">
+    <div className="overflow-auto max-h-[79vh] rounded-xl bg-white dark:bg-black ">
       <table className="w-full text-sm border-collapse">
         {/* ================= HEADER ================= */}
         <thead className="sticky top-0 bg-[#fafafa] z-20 dark:bg-black dark:border-b dark:border-gray-700">

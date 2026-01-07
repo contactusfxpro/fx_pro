@@ -2,9 +2,11 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
-import { useLoading,LoadingProvider } from "./context/LoadingContext";
+import { useLoading, LoadingProvider } from "./context/LoadingContext";
 import MainPage from "./pages/MainPage.jsx";
 import Navbar from "./components/Navbar.jsx";
+import History from "./pages/HistoryPage.jsx";
+import Footer from "./components/Footer.jsx";
 
 const AppContent = () => {
   const { theme } = useTheme();
@@ -34,12 +36,15 @@ const AppContent = () => {
 
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/history" element={<History />} />
         </Routes>
+
+      <Footer />
+
       </div>
     </>
   );
 };
-
 
 const App = () => {
   return (

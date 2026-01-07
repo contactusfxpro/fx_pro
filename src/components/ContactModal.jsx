@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import tab from "../assets/Tab 1.svg";
+import tabd from "../assets/tabl.svg";
+import tabl from "../assets/tabd.svg";
 import toast, { Toaster } from "react-hot-toast";
 
 const initialState = {
@@ -209,7 +210,9 @@ placeholder-gray-400 dark:placeholder-gray-400
 
         {/* RIGHT IMAGE */}
         <div className="w-[50%] flex items-center justify-center h-full">
-          <img src={tab} alt="Contact illustration" />
+          <img src={tabl} alt="Contact illustration" className=" block dark:hidden" />
+          <img src={tabd} alt="Contact illustration" className=" hidden dark:block" />
+
         </div>
       </div>
     </div>
