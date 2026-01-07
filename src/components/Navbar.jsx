@@ -16,7 +16,7 @@ const Navbar = () => {
               <img
                 src={fxLogo}
                 alt="Fx Pro logo"
-                className="h-15 w-16 rounded-md"
+                className="h-14 w-16 rounded-md"
               />
 
               <div className="flex flex-col leading-tight">
