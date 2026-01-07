@@ -91,7 +91,7 @@ export default function SearchableDropdown({
 
             {filtered.map((opt, i) => (
               <li
-                key={opt}
+                key={`${opt}-${i}`}
                 onMouseEnter={() => setHighlighted(i)}
                 onClick={() => {
                   onChange(opt);

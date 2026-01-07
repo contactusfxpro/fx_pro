@@ -15,70 +15,16 @@ const Home = () => {
   const [fetchOk, setFetchOk] = useState(true);
   const { setLoading } = useLoading();
 
-  const BASE_OPTIONS = [
-    "USD",
-    "EUR",
-    "GBP",
-    "CHF",
-    "SEK",
-    "NOK",
-    "DKK",
-    "PLN",
-    "CZK",
-    "HUF",
-    "RON",
-    "ISK",
+ const BASE_OPTIONS = [
+  "USD","EUR","GBP","CHF","SEK","NOK","DKK","PLN","CZK","HUF","RON","ISK",
+  "CAD","MXN","BRL","ARS","CLP","COP","PEN","UYU",
+  "JPY","CNY","CNH","INR","KRW","SGD","HKD","THB","IDR","MYR","PHP","VND",
+  "AUD","NZD",
+  "AED","SAR","QAR","KWD","BHD","OMR",
+  "EGP","ZAR","NGN","KES","GHS","TZS","UGX",
+  "MAD","DZD","TND","RUB"
+];
 
-    "CAD",
-    "MXN",
-    "BRL",
-    "ARS",
-    "CLP",
-    "COP",
-    "PEN",
-    "UYU",
-    "JPY",
-    "CNY",
-    "CNH",
-    "INR",
-    "KRW",
-    "SGD",
-    "HKD",
-    "THB",
-    "IDR",
-    "MYR",
-    "PHP",
-    "VND",
-    "AUD",
-    "NZD",
-    "AED",
-    "SAR",
-    "QAR",
-    "KWD",
-    "BHD",
-    "OMR",
-    "EGP",
-    "ZAR",
-    "NGN",
-    "KES",
-    "GHS",
-    "TZS",
-    "UGX",
-    "MAD",
-    "DZD",
-    "TND",
-    "USD",
-    "EUR",
-    "GBP",
-    "JPY",
-    "CAD",
-    "CHF",
-    "BRL",
-    "RUB",
-    "INR",
-    "CNY",
-    "ZAR",
-  ];
 
   const prevRatesRef = useRef({});
   const ratesCacheRef = useRef({});
@@ -159,9 +105,15 @@ const Home = () => {
           </div>
 
           <div>
-            <span className="font-semibold">Last Update:</span>{" "}
-            {lastUpdated ? new Date(lastUpdated).toLocaleString() : "—"}
-          </div>
+  <span className="font-semibold">Last Update:</span>{" "}
+  {lastUpdated
+    ? new Date(lastUpdated).toLocaleString("en-US", {
+        timeZone: "UTC",
+        timeZoneName: "short",
+      })
+    : "—"}
+</div>
+
         </div>
 
         <div className="header flex justify-between items-center">
