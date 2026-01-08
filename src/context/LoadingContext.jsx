@@ -12,7 +12,6 @@ export const LoadingProvider = ({ children }) => {
     <LoadingContext.Provider value={{ loading, setLoading }}>
       {children}
 
-      {/* Global Loader */}
       {loading && <LoadingOverlay />}
     </LoadingContext.Provider>
   );

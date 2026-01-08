@@ -15,7 +15,6 @@ export default function SearchableDropdown({
     opt.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Close on outside click
   useEffect(() => {
     const handler = (e) => {
       if (ref.current && !ref.current.contains(e.target)) {
@@ -26,7 +25,6 @@ export default function SearchableDropdown({
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // Keyboard navigation
   const onKeyDown = (e) => {
     if (!open) return;
 
@@ -45,7 +43,6 @@ export default function SearchableDropdown({
 
   return (
     <div ref={ref} className="relative w-34" onKeyDown={onKeyDown}>
-      {/* Trigger */}
       <button
         onClick={() => setOpen((o) => !o)}
         className="flex w-full items-center justify-between rounded-lg border border-slate-300 bg-white dark:bg-black dark:border-gray-700 dark:text-[#f4f4f4] px-3 py-2 text-sm focus:outline-none "
@@ -68,10 +65,8 @@ export default function SearchableDropdown({
         </svg>
       </button>
 
-      {/* Dropdown */}
       {open && (
         <div className="absolute z-50 mt-2 w-full rounded-lg border border-slate-200 bg-white dark:bg-black dark:border-gray-700 shadow-lg">
-          {/* Search */}
           <input
             autoFocus
             value={search}
@@ -83,7 +78,6 @@ export default function SearchableDropdown({
             className="w-full border-b border-slate-200 dark:border-gray-700 px-3 py-2 text-sm focus:outline-none"
           />
 
-          {/* Options */}
           <ul className="max-h-48 overflow-auto">
             {filtered.length === 0 && (
               <li className="px-3 py-2 text-sm text-slate-400">No results</li>

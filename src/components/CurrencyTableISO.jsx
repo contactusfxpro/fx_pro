@@ -16,7 +16,6 @@ const CurrencyTableISO = ({ data }) => {
 
   return (
     <div className="w-full">
-      {/* Header + Search */}
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold text-gray-700 dark:text-[#fafafa]">
           ISO 4217 Currency Codes
@@ -36,7 +35,6 @@ const CurrencyTableISO = ({ data }) => {
         </div>
       </div>
 
-      {/* Scroll Container */}
       <div
         className="overflow-y-auto rounded-lg border border-gray-300 dark:border-gray-700"
         style={{
@@ -44,8 +42,7 @@ const CurrencyTableISO = ({ data }) => {
         }}
       >
         <table className="min-w-full border-collapse">
-          {/* Sticky Header */}
-          <thead className="sticky top-0 z-10 bg-gray-100 dark:bg-[#0f172a]">
+          <thead className="sticky top-0 z-10 bg-gray-200 dark:bg-[#0f172a]">
             <tr>
               <th className="px-8 py-3 text-left text-sm font-semibold">
                 Flag
@@ -62,7 +59,6 @@ const CurrencyTableISO = ({ data }) => {
             </tr>
           </thead>
 
-          {/* Body */}
           <tbody>
             {filteredData.length === 0 && (
               <tr>

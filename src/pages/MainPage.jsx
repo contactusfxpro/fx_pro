@@ -97,7 +97,6 @@ const Home = () => {
   return (
     <>
       <div className="mx-auto  p-6 space-y-6 dark:bg-[#070d17] dark:text-[#f4f4f4]">
-        {/* Info Strip */}
         <div className="flex flex-wrap gap-6 text-sm text-slate-600 dark:text-[#f4f4f4]">
           <div>
             <span className="font-semibold">Currencies:</span>{" "}
@@ -117,7 +116,6 @@ const Home = () => {
         </div>
 
         <div className="header flex justify-between items-center">
-          {/* Tabs */}
           <div className="tabs flex flex-wrap gap-2 ">
             {[
               ["ALL", "Overview"],
@@ -155,7 +153,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* FX Grid */}
         <CurrencyTable
           rates={rates}
           currencies={currencies}

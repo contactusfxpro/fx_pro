@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
-/* ✅ Enable dark mode using class strategy */
 @custom-variant dark (&:where(.dark, .dark *));
 body {
   font-family: 'Inter', sans-serif;
@@ -18,20 +17,23 @@ body {
     background: linear-gradient(98.09deg, #1fff75 7.34%, #08a336 91.69%);
 
 }
+.gradientcurrency{
+    background: linear-gradient(98.09deg, #621fff 7.34%, #c01fff 91.69%);
+
+}
 .bggradient{
     background: linear-gradient(98.09deg, #76a0ee 7.34%, #083EA3 91.69%);
 
 }
 
-/* width */
-/* ===== Light Theme Scrollbar ===== */
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e5e7eb; /* light gray */
+  background: #e5e7eb; 
 }
 
 ::-webkit-scrollbar-thumb {
@@ -50,7 +52,6 @@ body {
 
 
 
-/* 🔥 RATE FLASH */
 @keyframes rateUp {
   from { background-color: rgba(22,163,74,0.35); }
   to { background-color: transparent; }
@@ -74,6 +75,9 @@ body {
 }
 .flag-icon-md {
   font-size: 20px;
+}
+::-webkit-inner-spin-button{
+  display: none;
 }
 
 

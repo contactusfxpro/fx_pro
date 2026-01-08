@@ -4,10 +4,9 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
   return (
     <div className="overflow-auto max-h-[79vh] rounded-xl bg-white dark:bg-black ">
       <table className="w-auto text-sm border-collapse">
-        {/* ================= HEADER ================= */}
         <thead className="sticky top-0 bg-[#fafafa] z-20 dark:bg-black dark:border-b dark:border-gray-700">
           <tr>
-            <th className="p-7 sticky left-0 bg-[#fafafa] z-30 dark:bg-black" ></th>
+            <th className="p-7 sticky left-0 bg-[#fafafa] z-30 dark:bg-[#020617]"></th>
 
             {currencies.map((currency) => {
               const flag = getCurrencyFlag(currency);
@@ -15,7 +14,7 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
               return (
                 <th
                   key={currency}
-                  className="p-3  whitespace-nowrap text-center w-32 "
+                  className="p-3  whitespace-nowrap text-center w-32 dark:bg-[#020617]"
                 >
                   <div className="flex items-center justify-center gap-2  rounded-md py-2 px-4">
                     {flag && (
@@ -24,7 +23,9 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
                         title={currency}
                       />
                     )}
-                    <span className="text-[16px] font-medium  ">{currency}</span>
+                    <span className="text-[16px] font-medium  ">
+                      {currency}
+                    </span>
                   </div>
                 </th>
               );
@@ -32,15 +33,13 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
           </tr>
         </thead>
 
-        {/* ================= BODY ================= */}
         <tbody>
           {currencies.map((base) => {
             const baseFlag = getCurrencyFlag(base);
 
             return (
               <tr key={base}>
-                {/* ===== ROW HEADER ===== */}
-                <th className="sticky left-0 bg-[#fafafa] dark:bg-black  dark:border-b dark:border-gray-700  py-4 px-4 font-medium z-20">
+                <th className="sticky left-0 bg-[#fafafa] dark:bg-[#020617]  dark:border-b dark:border-gray-700  py-4 px-4 font-medium z-20">
                   <div className="flex items-center gap-2">
                     {baseFlag && (
                       <span
@@ -52,19 +51,18 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
                   </div>
                 </th>
 
-                {/* ===== DATA CELLS ===== */}
                 {currencies.map((quote) => {
                   const value = base === quote ? 1 : rates[quote] / rates[base];
 
                   const key = base + quote;
                   const prev = prevRates[key];
 
-                  // Heatmap
                   let heat = "";
-                  if (value > 1.02) heat = "bg-[#dcf0e6] dark:bg-black dark:text-green-500 ";
-                  else if (value < 0.98) heat = "bg-[#fdeaec] dark:bg-black dark:text-red-500 ";
+                  if (value > 1.02)
+                    heat = "bg-[#dcf0e6] dark:bg-black dark:text-green-500 ";
+                  else if (value < 0.98)
+                    heat = "bg-[#fdeaec] dark:bg-black dark:text-red-500 ";
 
-                  // Animation
                   let anim = "";
                   if (prev) {
                     anim =
@@ -75,7 +73,6 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
                         : "";
                   }
 
-                  // Store previous value
                   prevRates[key] = value;
 
                   return (

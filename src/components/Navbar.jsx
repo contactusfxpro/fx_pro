@@ -27,7 +27,6 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-50 bg-[#fafafa] dark:bg-[#070d17] border-b border-gray-300 dark:border-gray-700">
         <div className="relative h-16 px-6 flex items-center justify-between">
-          {/* LEFT — Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
               src={fxLogo}
@@ -44,7 +43,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* CENTER — Nav Items */}
           <div className="absolute left-1/2 -translate-x-1/2 flex gap-8 ">
             <NavLink to="/" className={navItem}>
               {({ isActive }) => (
@@ -126,7 +124,6 @@ const Navbar = () => {
             </NavLink>
           </div>
 
-          {/* RIGHT — Actions */}
           <div className="flex items-center gap-4">
             <button
               onClick={() => setOpen(true)}

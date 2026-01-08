@@ -4,7 +4,7 @@ import * as XLSX from "xlsx-js-style";
 const formatUtcForFilename = (dateInput) => {
   const d = new Date(dateInput);
 
-  const date = d.toISOString().slice(0, 10); // YYYY-MM-DD
+  const date = d.toISOString().slice(0, 10); 
 
   const time = d
     .toLocaleTimeString("en-US", {
@@ -14,8 +14,8 @@ const formatUtcForFilename = (dateInput) => {
       second: "2-digit",
       hour12: true,
     })
-    .replace(/:/g, "-") // HH-MM-SS AM
-    .replace(/\s+/g, "_"); // space → _
+    .replace(/:/g, "-") 
+    .replace(/\s+/g, "_"); 
 
   return `${date}_${time}_UTC`;
 };
@@ -62,15 +62,13 @@ const ExportCsv = ({ rates, currencies, base, lastUpdated }) => {
       },
     };
 
-    // 🔹 Merge heading across all columns
     worksheet["!merges"] = [
       {
-        s: { r: 0, c: 0 }, // A1
-        e: { r: 0, c: currencies.length }, // last column
+        s: { r: 0, c: 0 }, 
+        e: { r: 0, c: currencies.length }, 
       },
     ];
 
-    // 🔹 Style metadata row (A2)
     worksheet["A2"].s = {
       font: {
         sz: 13,

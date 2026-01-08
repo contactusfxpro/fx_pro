@@ -18,7 +18,6 @@ const ContactModal = ({ open, onClose }) => {
 
   if (!open) return null;
 
-  /* ------------------ Validation ------------------ */
   const validateField = (name, value) => {
     let error = "";
 
@@ -46,7 +45,6 @@ const ContactModal = ({ open, onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  /* ------------------ Handlers ------------------ */
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -116,7 +114,6 @@ const ContactModal = ({ open, onClose }) => {
           <X />
         </button>
 
-        {/* LEFT FORM */}
         <div className="w-[50%] flex flex-col items-center justify-center h-full ">
           <div className="w-[80%] p-6">
             <p className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
@@ -127,7 +124,6 @@ const ContactModal = ({ open, onClose }) => {
             </p>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-              {/* NAME */}
               <div>
                 <label className="text-sm text-gray-600 dark:text-gray-400">
                   Name <span className="text-red-500">*</span>
@@ -150,7 +146,6 @@ placeholder-gray-400 dark:placeholder-gray-400
                 )}
               </div>
 
-              {/* EMAIL */}
               <div>
                 <label className="text-sm text-gray-600 dark:text-gray-400">
                   Email <span className="text-red-500">*</span>
@@ -173,7 +168,6 @@ placeholder-gray-400 dark:placeholder-gray-400
                 )}
               </div>
 
-              {/* MESSAGE */}
               <div>
                 <label className="text-sm text-gray-600 dark:text-gray-400">
                   Message <span className="text-red-500">*</span>
@@ -208,11 +202,17 @@ placeholder-gray-400 dark:placeholder-gray-400
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
         <div className="w-[50%] flex items-center justify-center h-full">
-          <img src={tabl} alt="Contact illustration" className=" block dark:hidden" />
-          <img src={tabd} alt="Contact illustration" className=" hidden dark:block" />
-
+          <img
+            src={tabl}
+            alt="Contact illustration"
+            className=" block dark:hidden"
+          />
+          <img
+            src={tabd}
+            alt="Contact illustration"
+            className=" hidden dark:block"
+          />
         </div>
       </div>
     </div>

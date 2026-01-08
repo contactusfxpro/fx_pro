@@ -1,4 +1,3 @@
-// Common ISO currency → country flag mapping
 const currencyCountryMap = {
   USD: "us",
   INR: "in",
@@ -56,7 +55,7 @@ const currencyCountryMap = {
   PEN: "pe",
   UYU: "uy",
   VES: "ve",
-  XCD: "ag", // representative
+  XCD: "ag", 
   ZMW: "zm",
   AFN: "af",
   ALL: "al",
@@ -166,9 +165,8 @@ const currencyCountryMap = {
   ZWL: "zw",
 };
 
-// Special / multi-country / synthetic currencies
 const specialCases = {
-  EUR: "eu", // European Union
+  EUR: "eu", 
   XAF: null,
   XOF: null,
   XPF: null,
