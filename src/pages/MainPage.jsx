@@ -151,7 +151,7 @@ const Home = () => {
                 onChange={setBase}
               />
             </div>
-            <ExportCsv rates={rates} currencies={currencies} base={base} />
+            <ExportCsv rates={rates} currencies={currencies} base={base} lastUpdated={lastUpdated}/>
           </div>
         </div>
 

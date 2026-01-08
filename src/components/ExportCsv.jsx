@@ -1,45 +1,103 @@
 import { Download } from "lucide-react";
-import React from "react";
+import * as XLSX from "xlsx-js-style";
 
-const ExportCsv = ({ rates, currencies, base }) => {
-  const exportToCSV = () => {
+const formatUtcForFilename = (dateInput) => {
+  const d = new Date(dateInput);
+
+  const date = d.toISOString().slice(0, 10); // YYYY-MM-DD
+
+  const time = d
+    .toLocaleTimeString("en-US", {
+      timeZone: "UTC",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    })
+    .replace(/:/g, "-") // HH-MM-SS AM
+    .replace(/\s+/g, "_"); // space → _
+
+  return `${date}_${time}_UTC`;
+};
+
+const ExportCsv = ({ rates, currencies, base, lastUpdated }) => {
+  const exportToExcel = () => {
     if (!rates || currencies.length === 0) return;
-    let csv = "," + currencies.join(",") + "\n";
 
-    currencies.forEach((rowBase) => {
-      let row = rowBase;
-      currencies.forEach((quote) => {
-        const value = rowBase === quote ? 1 : rates[quote] / rates[rowBase];
-        row += "," + value.toFixed(6);
-      });
-      csv += row + "\n";
+    const heading = [["Cross Currency Rates"]];
+    const meta = [
+      [
+        `Total Currencies: ${
+          currencies.length
+        } | Base: ${base} | Last Updated: ${
+          lastUpdated
+            ? new Date(lastUpdated).toLocaleString("en-US", {
+                timeZone: "UTC",
+                timeZoneName: "short",
+              })
+            : "—"
+        }`,
+      ],
+    ];
+
+    const headerRow = ["", ...currencies];
+
+    const dataRows = currencies.map((rowBase) => {
+      return [
+        rowBase,
+        ...currencies.map((quote) =>
+          rowBase === quote ? 1 : +(rates[quote] / rates[rowBase]).toFixed(6)
+        ),
+      ];
     });
-    const blob = new Blob([csv], {
-      type: "text/csv;charset=utf-8;",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
 
-    a.href = url;
-    a.download -
-      `FX_Cross_Rates_${base}_${new Date().toISOString().slice(0, 10)}.csv`;
+    const worksheetData = [...heading, ...meta, [], headerRow, ...dataRows];
 
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
+    worksheet["A1"].s = {
+      font: {
+        bold: true,
+        italic: true,
+        sz: 18,
+      },
+    };
+
+    // 🔹 Merge heading across all columns
+    worksheet["!merges"] = [
+      {
+        s: { r: 0, c: 0 }, // A1
+        e: { r: 0, c: currencies.length }, // last column
+      },
+    ];
+
+    // 🔹 Style metadata row (A2)
+    worksheet["A2"].s = {
+      font: {
+        sz: 13,
+      },
+    };
+    const workbook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Cross Currency Rates");
+
+    const formattedDate = lastUpdated
+      ? formatUtcForFilename(lastUpdated)
+      : formatUtcForFilename(new Date());
+
+    const fileName = `Cross_Currency_Rates_${formattedDate}.xlsx`;
+
+    XLSX.writeFile(workbook, fileName);
   };
+
   return (
-    <>
-      <button
-        className="export rounded-lg gradientexport cursor-pointer flex items-center gap-2 text-white px-4 py-2 text-sm font-semibold  "
-        onClick={exportToCSV}
-        disabled={!currencies.length}
-      >
-        <Download className="w-5 h-5" />
-        Export CSV
-      </button>
-    </>
+    <button
+      className="export rounded-lg gradientexport cursor-pointer flex items-center gap-2 text-white px-4 py-2 text-sm font-semibold"
+      onClick={exportToExcel}
+      disabled={!currencies.length}
+    >
+      <Download className="w-5 h-5" />
+      Export CSV
+    </button>
   );
 };
 
