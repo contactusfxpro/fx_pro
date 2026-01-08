@@ -148,8 +148,15 @@ const Navbar = () => {
         </div>
 
         {/* MOBILE FULL CANVAS MENU */}
+
+        {menuOpen && (
+          <div
+            onClick={() => setMenuOpen(false)}
+            className="fixed inset-0 z-30 bg-black/30 backdrop-blur-sm transition-opacity lg:hidden"
+          />
+        )}
         <div
-          className={`fixed inset-0 z-40 bg-[#fafafa] dark:bg-[#070d17]
+          className={`fixed inset-0 z-40 bg-[#fafafa] dark:bg-[#070d17] w-[75%]
   transform transition-transform duration-300 ease-in-out
   ${menuOpen ? "translate-x-0" : "-translate-x-full"}
   lg:hidden`}
