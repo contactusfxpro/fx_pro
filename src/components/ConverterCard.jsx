@@ -80,7 +80,7 @@ const ConverterCard = ({ rates, from, to, setFrom, setTo }) => {
         <span className="mx-2 text-sm">equals</span>
         <br />
         <span className="font-bold text-2xl mt-1">
-          {converted.toFixed(4)} {to}
+          {converted.toFixed(2)} {to}
         </span>
       </div>
     </div>
