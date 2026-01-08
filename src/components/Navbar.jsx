@@ -43,7 +43,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <div className="absolute left-1/2 -translate-x-1/2 flex gap-8 ">
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-8 ">
             <NavLink to="/" className={navItem}>
               {({ isActive }) => (
                 <>
@@ -103,7 +103,7 @@ const Navbar = () => {
               )}
             </NavLink>
 
-            <NavLink to="/currencyconverter" className={navItem}>
+            {/* <NavLink to="/currencyconverter" className={navItem}>
               {({ isActive }) => (
                 <>
                   <div
@@ -119,6 +119,23 @@ const Navbar = () => {
                     className={`absolute -bottom-1 left-0 h-0.5 w-full rounded-full transition-all
         ${isActive ? "bg-blue-600 dark:bg-blue-400" : "bg-transparent"}`}
                   />
+                </>
+              )}
+            </NavLink> */}
+            <NavLink
+              to="/currencyconverter"
+              className="gradientexport   text-white px-2 p-1 rounded-2xl "
+            >
+              {({ isActive }) => (
+                <>
+                  <div
+                    className={`flex items-center gap-1 text-[16px] transition-all
+      ${isActive ? "font-semibold " : "font-medium"}
+    `}
+                  >
+                    <RefreshCcw className="w-4 h-4" />
+                    <span>Currency Converter</span>
+                  </div>
                 </>
               )}
             </NavLink>
