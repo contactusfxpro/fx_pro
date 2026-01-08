@@ -139,8 +139,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="mx-auto  p-6 space-y-6 dark:bg-[#070d17] dark:text-[#f4f4f4]">
-        <div className="flex flex-wrap gap-6 text-sm text-slate-600 dark:text-[#f4f4f4]">
+      <div className="mx-auto  p-6 lg:space-y-4   dark:bg-[#070d17] dark:text-[#f4f4f4]">
+        <div className="flex flex-wrap  gap-2 md:gap-6 text-sm text-slate-600 dark:text-[#f4f4f4]">
           <div className="flex items-center gap-1">
             <span className="font-semibold">Currencies:</span>{" "}
             <p className="text-blue-600 font-bold">{currencies.length}</p>
@@ -157,8 +157,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="header flex justify-between items-center">
-          <div className="tabs flex flex-wrap gap-2 ">
+        <div className="header lg:flex justify-between items-center">
+          <div className="tabs flex flex-wrap gap-2  mt-4 md:mb-2 lg:mt-0 lg:mb-0 ">
             {[
               ["ALL", "Overview"],
               ["EUROPE_AMERICAS", "Europe & Americas"],
@@ -182,7 +182,7 @@ const Home = () => {
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-6">
+          <div className="md:flex items-center gap-6 md:mt-2 lg:mt-0">
             <div className="base flex items-center gap-2 ">
               <p className="text-slate-600 font-semibold dark:text-[#f4f4f4]">
                 {" "}

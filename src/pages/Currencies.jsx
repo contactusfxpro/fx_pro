@@ -4,7 +4,7 @@ import CurrencyTableISO from "../components/CurrencyTableISO";
 
 const Currencies = () => {
   return (
-    <div className="max-w-6xl mx-auto py-5 dark:text-[#fafafa]">
+    <div className="max-w-6xl mx-auto px-4 lg:px-0 py-5 dark:text-[#fafafa]">
       <CurrencyTableISO data={currencies} />
     </div>
   );

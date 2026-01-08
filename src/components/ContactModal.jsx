@@ -114,7 +114,7 @@ const ContactModal = ({ open, onClose }) => {
           <X />
         </button>
 
-        <div className="w-[50%] flex flex-col items-center justify-center h-full ">
+        <div className="w-full lg:w-[50%] flex flex-col items-center justify-center h-full ">
           <div className="w-[80%] p-6">
             <p className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
               Get in touch
@@ -202,7 +202,7 @@ placeholder-gray-400 dark:placeholder-gray-400
           </div>
         </div>
 
-        <div className="w-[50%] flex items-center justify-center h-full">
+        <div className="hidden lg:flex w-[50%]  items-center justify-center h-full">
           <img
             src={tabl}
             alt="Contact illustration"

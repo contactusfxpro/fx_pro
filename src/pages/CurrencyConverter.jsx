@@ -31,7 +31,7 @@ const CurrencyConverter = () => {
 
   return (
     <div className="min-h-[calc(100vh-110px)] max-w-[90%] mx-auto   dark:text-[#fafafa] py-6">
-      <div className=" w-[70%] m-auto">
+      <div className=" lg:w-[70%] m-auto">
          <ConverterCard
           rates={rates}
           from={from}
@@ -41,8 +41,8 @@ const CurrencyConverter = () => {
         />
 
       </div>
-      <div className=" w-[70%] m-auto mt-4">
-        <div className=" grid grid-cols-2 gap-6">
+      <div className=" lg:w-[70%] m-auto mt-4">
+        <div className=" grid lg:grid-cols-2 gap-6">
         <ConversionTable from={from} to={to} rates={rates} />
 
         <ConversionTable from={to} to={from} rates={rates} />

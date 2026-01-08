@@ -89,7 +89,7 @@ const ExportCsv = ({ rates, currencies, base, lastUpdated }) => {
 
   return (
     <button
-      className="export rounded-lg gradientexport cursor-pointer flex items-center gap-2 text-white px-4 py-2 text-sm font-semibold"
+      className="export mt-4 mb-4 lg:mb-0 lg:mt-0 rounded-lg gradientexport cursor-pointer flex items-center gap-2 text-white px-4 py-2 text-sm font-semibold"
       onClick={exportToExcel}
       disabled={!currencies.length}
     >
