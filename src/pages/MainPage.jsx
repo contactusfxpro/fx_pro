@@ -15,16 +15,59 @@ const Home = () => {
   const [fetchOk, setFetchOk] = useState(true);
   const { setLoading } = useLoading();
 
- const BASE_OPTIONS = [
-  "USD","EUR","GBP","CHF","SEK","NOK","DKK","PLN","CZK","HUF","RON","ISK",
-  "CAD","MXN","BRL","ARS","CLP","COP","PEN","UYU",
-  "JPY","CNY","CNH","INR","KRW","SGD","HKD","THB","IDR","MYR","PHP","VND",
-  "AUD","NZD",
-  "AED","SAR","QAR","KWD","BHD","OMR",
-  "EGP","ZAR","NGN","KES","GHS","TZS","UGX",
-  "MAD","DZD","TND","RUB"
-];
-
+  const BASE_OPTIONS = [
+    "USD",
+    "EUR",
+    "GBP",
+    "CHF",
+    "SEK",
+    "NOK",
+    "DKK",
+    "PLN",
+    "CZK",
+    "HUF",
+    "RON",
+    "ISK",
+    "CAD",
+    "MXN",
+    "BRL",
+    "ARS",
+    "CLP",
+    "COP",
+    "PEN",
+    "UYU",
+    "JPY",
+    "CNY",
+    "CNH",
+    "INR",
+    "KRW",
+    "SGD",
+    "HKD",
+    "THB",
+    "IDR",
+    "MYR",
+    "PHP",
+    "VND",
+    "AUD",
+    "NZD",
+    "AED",
+    "SAR",
+    "QAR",
+    "KWD",
+    "BHD",
+    "OMR",
+    "EGP",
+    "ZAR",
+    "NGN",
+    "KES",
+    "GHS",
+    "TZS",
+    "UGX",
+    "MAD",
+    "DZD",
+    "TND",
+    "RUB",
+  ];
 
   const prevRatesRef = useRef({});
   const ratesCacheRef = useRef({});
@@ -98,21 +141,20 @@ const Home = () => {
     <>
       <div className="mx-auto  p-6 space-y-6 dark:bg-[#070d17] dark:text-[#f4f4f4]">
         <div className="flex flex-wrap gap-6 text-sm text-slate-600 dark:text-[#f4f4f4]">
-          <div>
+          <div className="flex items-center gap-1">
             <span className="font-semibold">Currencies:</span>{" "}
-            {currencies.length}
+            <p className="text-blue-600 font-bold">{currencies.length}</p>
           </div>
 
           <div>
-  <span className="font-semibold">Last Update:</span>{" "}
-  {lastUpdated
-    ? new Date(lastUpdated).toLocaleString("en-US", {
-        timeZone: "UTC",
-        timeZoneName: "short",
-      })
-    : "—"}
-</div>
-
+            <span className="font-semibold">Last Update:</span>{" "}
+            {lastUpdated
+              ? new Date(lastUpdated).toLocaleString("en-US", {
+                  timeZone: "UTC",
+                  timeZoneName: "short",
+                })
+              : "—"}
+          </div>
         </div>
 
         <div className="header flex justify-between items-center">
@@ -142,14 +184,22 @@ const Home = () => {
           </div>
           <div className="flex items-center gap-6">
             <div className="base flex items-center gap-2 ">
-              <p className="text-slate-600 font-semibold dark:text-[#f4f4f4]"> Base Currency : </p>
+              <p className="text-slate-600 font-semibold dark:text-[#f4f4f4]">
+                {" "}
+                Base Currency :{" "}
+              </p>
               <SearchableDropdown
                 options={BASE_OPTIONS}
                 value={base}
                 onChange={setBase}
               />
             </div>
-            <ExportCsv rates={rates} currencies={currencies} base={base} lastUpdated={lastUpdated}/>
+            <ExportCsv
+              rates={rates}
+              currencies={currencies}
+              base={base}
+              lastUpdated={lastUpdated}
+            />
           </div>
         </div>
 

@@ -90,7 +90,7 @@ const CurrencyTableISO = ({ data }) => {
                   </div>
                 </td>
 
-                <td className="px-4 py-2 font-mono text-blue-600 dark:text-blue-400">
+                <td className="px-4 py-2  font-semibold text-blue-600 dark:text-blue-400">
                   {item.code}
                 </td>
                 <td className="px-4 py-2">{item.name}</td>
