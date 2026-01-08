@@ -42,7 +42,7 @@ const ConversionTable = ({ from, to, rates }) => {
               </td>
 
               <td className="py-3">
-                {(amount * rate).toFixed(4)} {to}
+                {(amount * rate).toFixed(2)} {to}
               </td>
             </tr>
           ))}
