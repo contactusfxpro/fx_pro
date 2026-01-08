@@ -105,8 +105,8 @@ const ContactModal = ({ open, onClose }) => {
   };
 
   return (
-    <div className=" fixed inset-0 z-9999 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-      <div className="w-[80%] h-[88vh] relative rounded-xl bg-[#f9f9f9] dark:bg-zinc-900 shadow-lg  flex ">
+    <div className=" fixed inset-0 z-9999 flex items-center justify-center  backdrop-blur-sm">
+      <div className="w-[80%] h-auto md:h-[88vh] relative rounded-xl bg-[#f9f9f9] dark:bg-[#070d17] shadow-lg  flex ">
         <button
           onClick={handleClose}
           className="absolute -right-4.5 -top-4 bg-gray-200 p-1 shadow-2xl rounded-full cursor-pointer"
@@ -135,11 +135,11 @@ const ContactModal = ({ open, onClose }) => {
                   onBlur={handleBlur}
                   placeholder="Enter your name"
                   className={`mt-1 w-full rounded-lg border px-3 py-2 text-sm text-gray-900 dark:text-white
-placeholder-gray-400 dark:placeholder-gray-400
+placeholder-gray-400 dark:placeholder-gray-400 
 
                       ${errors.name ? "border-red-500" : "border-gray-300"}
                       focus:outline-none focus:ring-1 focus:ring-blue-600
-                      dark:bg-zinc-800 dark:border-zinc-700`}
+                      dark:bg-[#0f172a] dark:border-zinc-700`}
                 />
                 {errors.name && (
                   <p className="text-xs text-red-500 mt-1">{errors.name}</p>
@@ -161,7 +161,7 @@ placeholder-gray-400 dark:placeholder-gray-400
 
                       ${errors.email ? "border-red-500" : "border-gray-300"}
                       focus:outline-none focus:ring-1 focus:ring-blue-600
-                      dark:bg-zinc-800 dark:border-zinc-700`}
+                      dark:bg-[#0f172a] dark:border-zinc-700`}
                 />
                 {errors.email && (
                   <p className="text-xs text-red-500 mt-1">{errors.email}</p>
@@ -184,7 +184,7 @@ placeholder-gray-400 dark:placeholder-gray-400
 
                       ${errors.message ? "border-red-500" : "border-gray-300"}
                       focus:outline-none focus:ring-1 focus:ring-blue-600
-                      dark:bg-zinc-800 dark:border-zinc-700`}
+                      dark:bg-[#0f172a] dark:border-zinc-700`}
                 />
                 {errors.message && (
                   <p className="text-xs text-red-500 mt-1">{errors.message}</p>
