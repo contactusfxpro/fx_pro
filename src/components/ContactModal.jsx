@@ -115,7 +115,7 @@ const ContactModal = ({ open, onClose }) => {
         </button>
 
         <div className="w-full lg:w-[50%] flex flex-col items-center justify-center h-full ">
-          <div className="w-[80%] p-6">
+          <div className="md:w-[80%] p-6">
             <p className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
               Get in touch
             </p>
