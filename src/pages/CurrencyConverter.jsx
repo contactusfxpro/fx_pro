@@ -7,8 +7,8 @@ const CurrencyConverter = () => {
   const [rates, setRates] = useState({});
   const { setLoading } = useLoading();
 
-  const [from, setFrom] = useState("INR");
-  const [to, setTo] = useState("USD");
+  const [from, setFrom] = useState("USD");
+  const [to, setTo] = useState("EUR");
 
   useEffect(() => {
     const fetchRates = async () => {
