@@ -49,7 +49,7 @@ const Navbar = () => {
                   CrossCurrencyFX
                 </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Global FX Cross-Rate Analytics
+                  Global Fx, Simplified
                 </p>
               </div>
             </Link>
