@@ -9,6 +9,7 @@ import History from "./pages/HistoryPage.jsx";
 import Footer from "./components/Footer.jsx";
 import Currencies from "./pages/Currencies.jsx";
 import CurrencyConverter from "./pages/CurrencyConverter.jsx";
+import Pricing from "./pages/Pricing.jsx";
 
 const AppContent = () => {
   const { theme } = useTheme();
@@ -39,6 +40,8 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/history" element={<History />} />
+          <Route path="/pricing" element={<Pricing />} />
+
           <Route path="/currencies" element={<Currencies />} />
           <Route path="/currencyconverter" element={<CurrencyConverter />} />
         </Routes>

@@ -9,6 +9,7 @@ import {
   RefreshCcw,
   RotateCcw,
   Sparkles,
+  Tag,
   X,
 } from "lucide-react";
 import ContactModal from "./ContactModal";
@@ -55,7 +56,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2  items-center gap-8 ">
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2  items-center gap-6 ">
             <NavLink to="/" className={navItem}>
               {({ isActive }) => (
                 <>
@@ -84,7 +85,7 @@ const Navbar = () => {
     `}
                   >
                     <CircleDollarSign className="w-4 h-4" />
-                    <span>Currencies</span>
+                    <span>Currency List</span>
                   </div>
 
                   <span
@@ -105,6 +106,25 @@ const Navbar = () => {
                   >
                     <History className="w-4 h-4" />
                     <span>Historical Data</span>
+                  </div>
+
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 w-full rounded-full transition-all
+        ${isActive ? "bg-blue-600 dark:bg-blue-400" : "bg-transparent"}`}
+                  />
+                </>
+              )}
+            </NavLink>
+            <NavLink to="/pricing" className={navItem}>
+              {({ isActive }) => (
+                <>
+                  <div
+                    className={`flex items-center gap-1 text-[16px] transition-all
+      ${isActive ? "font-semibold " : "font-medium"}
+    `}
+                  >
+                    <Tag className="w-4 h-4" />
+                    <span>Pricing</span>
                   </div>
 
                   <span
@@ -194,7 +214,7 @@ const Navbar = () => {
             >
               <div className="flex items-center gap-3 text-lg">
                 <CircleDollarSign className="w-5 h-5" />
-                Currencies
+                Currency List
               </div>
             </NavLink>
 
@@ -206,6 +226,17 @@ const Navbar = () => {
               <div className="flex items-center gap-3 text-lg">
                 <History className="w-5 h-5" />
                 Historical Data
+              </div>
+            </NavLink>
+
+            <NavLink
+              to="/pricing"
+              onClick={() => setMenuOpen(false)}
+              className={navItem}
+            >
+              <div className="flex items-center gap-3 text-lg">
+                <Tag className="w-5 h-5" />
+                Pricing
               </div>
             </NavLink>
 
