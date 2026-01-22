@@ -52,6 +52,16 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
                 </th>
 
                 {currencies.map((quote) => {
+                  if (!rates[base] || !rates[quote]) {
+                    return (
+                      <td
+                        key={quote}
+                        className="p-5 text-center border-b border-gray-200 dark:border-gray-700"
+                      >
+                        —
+                      </td>
+                    );
+                  }
                   const value = base === quote ? 1 : rates[quote] / rates[base];
 
                   const key = base + quote;
@@ -69,11 +79,11 @@ const CurrencyTable = ({ rates, currencies, prevRates }) => {
                       value > prev
                         ? "rate-up"
                         : value < prev
-                        ? "rate-down"
-                        : "";
+                          ? "rate-down"
+                          : "";
                   }
 
-                  prevRates[key] = value;
+                  // prevRates[key] = value;
 
                   return (
                     <td

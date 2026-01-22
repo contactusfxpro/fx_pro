@@ -134,12 +134,19 @@ const Home = () => {
     };
   }, [base]);
 
-  const allCurrencies = Object.keys(rates);
+  const allCurrencies = [
+    "EUR",
+    ...Object.keys(rates).filter((c) => c !== "EUR"),
+  ];
 
   const currencies =
     activeTab === "ALL"
       ? allCurrencies
       : allCurrencies.filter((c) => currencyGroups[activeTab]?.includes(c));
+
+  useEffect(() => {
+    prevRatesRef.current = {};
+  }, [rates]);
 
   return (
     <>
