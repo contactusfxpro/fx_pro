@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+body {
+  font-family: 'Inter', sans-serif;
+}
+.dark{
+  background-color: #070d17;
+}
+
+.gradient{
+    background: linear-gradient(98.09deg, #1F6DFF 7.34%, #083EA3 91.69%);
+
+}
+.gradientexport{
+    background: linear-gradient(98.09deg, #1fff75 7.34%, #08a336 91.69%);
+
+}
+.gradientcurrency{
+    background: linear-gradient(98.09deg, #621fff 7.34%, #c01fff 91.69%);
+
+}
+.bggradient{
+    background: linear-gradient(98.09deg, #76a0ee 7.34%, #083EA3 91.69%);
+
+}
+.gradientbtn{
+    background: linear-gradient(98.09deg, #c551e8 7.34%, #d44fd6 91.69%);
+
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f6dff;
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0b0f14;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #0084ff;
+}
+
+
+
+
+
+@keyframes rateUp {
+  from { background-color: rgba(22,163,74,0.35); }
+  to { background-color: transparent; }
+}
+
+@keyframes rateDown {
+  from { background-color: rgba(220,38,38,0.35); }
+  to { background-color: transparent; }
+}
+
+.rate-up {
+  animation: rateUp 0.8s ease;
+}
+
+.rate-down {
+  animation: rateDown 0.8s ease;
+}
+
+.flag-icon-lg {
+  font-size: 20px;
+}
+.flag-icon-md {
+  font-size: 20px;
+}
+::-webkit-inner-spin-button{
+  display: none;
+}
+
+
+
+/* Base glass button (shared) */
+.glass-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  border-radius: 15px;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 🌞 Light mode */
+.glass-button {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* 🌞 Light hover */
+.glass-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 🌙 Dark mode */
+.dark .glass-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 🌙 Dark hover */
+.dark .glass-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
